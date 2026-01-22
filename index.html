@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz of Anuj Subedi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2 class="top-heading">Let's see how well you know me</h2>
+
+  <!-- Progress Bar -->
+  <div class="progress-container" id="progressContainer">
+    <div class="progress-bar" id="progressBar">
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+  </div>
+
+  <!-- Volume Controller -->
+  <div class="volume-control">
+    <span class="volume-icon">🔊</span>
+    <input type="range" id="volumeSlider" min="0" max="100" value="15">
+  </div>
+
+  <div id="backgroundOverlay"></div>
+
+  <!-- Welcome Screen -->
+  <div class="welcome">
+    <div class="animated-text" id="animatedText"></div>
+    <img src="host.png" id="character" alt="Character">
+    <div id="speech-box">
+      <p id="speech-text"></p>
+      <input id="playerNameInput" placeholder="Enter your name">
+    </div>
+    <button class="start-btn hidden" id="startBtn">Start</button>
+  </div>
+
+  <!-- Akinator Style Quiz Screen -->
+  <div id="quizContainer" class="quiz-container">
+    <!-- Single Character on Left -->
+    <div class="quiz-character">
+      <img src="host.png" alt="Anuj" id="quizCharacter">
+    </div>
+
+    <!-- Question and Options on Right -->
+    <div class="question-container">
+      <div class="question-card">
+        <h2 id="questionText">Question will appear here</h2>
+        <p class="question-number" id="questionNumber">Question 1 of 1</p>
+      </div>
+
+      <div class="answer-buttons" id="answerButtons">
+        <button class="answer-btn">Option 1</button>
+        <button class="answer-btn">Option 2</button>
+        <button class="answer-btn">Option 3</button>
+        <button class="answer-btn">Option 4</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase SDK (Compat version for easier use) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  
+  <script src="script.js"></script>
+</body>
+</html>
