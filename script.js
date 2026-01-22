@@ -39,8 +39,10 @@ async function saveQuizResults(playerName, score, totalQuestions, timeTaken, att
       })
     };
 
-    const docRef = await db.collection('quizResults').add(quizResult);
-    console.log('Quiz result saved successfully with ID:', docRef.id);
+   const timestamp = Date.now();
+const docId = `${playerName}_${timestamp}`;
+await db.collection('quizResults').doc(docId).set(quizResult);
+console.log('Quiz result saved successfully with ID:', docId);
     return true;
   } catch (error) {
     console.error('Error saving quiz result:', error);
@@ -684,4 +686,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1500);
     });
   });
+
 });
